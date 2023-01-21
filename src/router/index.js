@@ -4,17 +4,52 @@ import HomeView from '../views/HomeView.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'login',
+    component: () => import('../views/Login.vue'),
+    meta: {
+      requiresVisitor: true
+    }
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/company',
+    name: 'company',
+    component: () => import('../views/Companies.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: () => import('../views/Users.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/department',
+    name: 'department',
+    component: () => import('../views/Departments.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/employee',
+    name: 'employee',
+    component: () => import('../views/Employees.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: () => import('../views/Logout.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
 ]
 
 const router = createRouter({

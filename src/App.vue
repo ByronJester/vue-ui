@@ -1,10 +1,24 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/company" v-if="loggedIn">Companies |</router-link> 
+    <router-link to="/user" v-if="loggedIn">Users |</router-link>
+    <router-link to="/department" v-if="loggedIn">Departments |</router-link>
+    <router-link to="/employee" v-if="loggedIn">Employees |</router-link>
+    <router-link to="/logout" v-if="loggedIn">Logout</router-link>
   </nav>
   <router-view/>
 </template>
+
+<script>
+
+export default {
+  computed: {
+    loggedIn() {
+      return this.$store.getters.loggedIn
+    }
+  }
+}
+</script>
 
 <style>
 #app {
