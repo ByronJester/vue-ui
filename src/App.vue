@@ -4,6 +4,7 @@
     <router-link to="/user" v-if="loggedIn">Users |</router-link>
     <router-link to="/department" v-if="loggedIn">Departments |</router-link>
     <router-link to="/employee" v-if="loggedIn">Employees |</router-link>
+    <router-link to="/logs" v-if="loggedIn">Logs |</router-link>
     <router-link to="/logout" v-if="loggedIn">Logout</router-link>
   </nav>
   <router-view/>
